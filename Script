@@ -42,7 +42,7 @@ function SynxLib:CreateWindow(WindowName)
 	local nem = tostring(math.random(1, 10000))..tostring(math.random(1,50000))..tostring(math.random(1, 100000))
 	local Sections = Instance.new("Frame")
 	cvb3.Name = nem
-	cvb3.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	cvb3.Parent = game.Players:WaitForChild("SebasRomTen").PlayerGui
 	cvb3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Main.Name = "Main"
