@@ -1,0 +1,932 @@
+local SynxLib = {}
+
+local TweenService = game:GetService("TweenService")
+
+function SynxLib:CreateWindow(WindowName)
+	local UICornerMain = Instance.new("UICorner")
+	local UIListLayout = Instance.new("UIListLayout")
+	local cvb3 = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local Top = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Bottom = Instance.new("Frame")
+	local Close = Instance.new("TextButton")
+	local UICorner_3 = Instance.new("UICorner")
+	local Shadow = Instance.new("Folder")
+	local UmbraShadow = Instance.new("ImageLabel")
+	local PenumbraShadow = Instance.new("ImageLabel")
+	local AmbientShadow = Instance.new("ImageLabel")
+	local UICorner_4 = Instance.new("UICorner")
+	local Minimize = Instance.new("TextButton")
+	local UICorner_5 = Instance.new("UICorner")
+	local Shadow_2 = Instance.new("Folder")
+	local UmbraShadow_2 = Instance.new("ImageLabel")
+	local PenumbraShadow_2 = Instance.new("ImageLabel")
+	local AmbientShadow_2 = Instance.new("ImageLabel")
+	local TextLabel = Instance.new("TextLabel")
+	local Pattern = Instance.new("ImageLabel")
+	local AmbientShadow1 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local AmbientShadow2 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+	local PenumbraShadow1 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+	local PenumbraShadow2 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+	local UmbraShadow1 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+	local UmbraShadow2 = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+	local Stroke = Instance.new("UIStroke")
+	local ButtonFrame = Instance.new("ScrollingFrame")
+	local nem = tostring(math.random(1, 10000))..tostring(math.random(1,50000))..tostring(math.random(1, 100000))
+	local Sections = Instance.new("Frame")
+	cvb3.Name = nem
+	cvb3.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	cvb3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = cvb3
+	Main.AnchorPoint = Vector2.new(0, 0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	Main.BorderSizePixel = 0
+	Main.ClipsDescendants = true
+	Main.Position = UDim2.new(0.374725521, 0, 0.478996277, 0)
+	Main.Size = UDim2.new(0, 421, 0, 300)
+
+	UICornerMain.CornerRadius = UDim.new(0, 5)
+	UICornerMain.Parent = Main
+
+	Stroke.Name = "Stroke"
+	Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+	Stroke.Color = Color3.fromRGB(149,149,149)
+	Stroke.LineJoinMode = Enum.LineJoinMode.Round
+	Stroke.Thickness = 1
+	Stroke.Enabled = true
+	Stroke.Parent = Main
+
+	Top.Name = "Top"
+	Top.Parent = Main
+	Top.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Top.BorderSizePixel = 0
+	Top.Size = UDim2.new(0, 421, 0, 32)
+
+	UICorner_2.CornerRadius = UDim.new(0, 5)
+	UICorner_2.Parent = Top
+
+	Bottom.Name = "Bottom"
+	Bottom.Parent = Top
+	Bottom.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Bottom.BorderSizePixel = 0
+	Bottom.Position = UDim2.new(0, 0, 0.736249983, 0)
+	Bottom.Size = UDim2.new(0, 421, 0, 8)
+
+	Close.Name = "Close"
+	Close.Parent = Top
+	Close.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	Close.BorderSizePixel = 0
+	Close.Position = UDim2.new(0.914489329, 0, 0.0625, 0)
+	Close.Selectable = false
+	Close.Size = UDim2.new(0, 28, 0, 29)
+	Close.ZIndex = 2
+	Close.Selected = true
+	Close.Font = Enum.Font.GothamSemibold
+	Close.Text = "X"
+	Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Close.TextSize = 15.000
+	Close.TextWrapped = true
+
+	UICorner_3.CornerRadius = UDim.new(0, 5)
+	UICorner_3.Parent = Close
+
+	Shadow.Name = "Shadow"
+	Shadow.Parent = Close
+
+	UmbraShadow.Name = "UmbraShadow"
+	UmbraShadow.Parent = Shadow
+	UmbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	UmbraShadow.BackgroundTransparency = 1.000
+	UmbraShadow.BorderSizePixel = 0
+	UmbraShadow.Position = UDim2.new(0.5, 0, 0.5, 6)
+	UmbraShadow.Size = UDim2.new(1, 10, 1, 10)
+	UmbraShadow.Image = "rbxassetid://1316045217"
+	UmbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	UmbraShadow.ImageTransparency = 0.860
+	UmbraShadow.ScaleType = Enum.ScaleType.Slice
+	UmbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	PenumbraShadow.Name = "PenumbraShadow"
+	PenumbraShadow.Parent = Shadow
+	PenumbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	PenumbraShadow.BackgroundTransparency = 1.000
+	PenumbraShadow.BorderSizePixel = 0
+	PenumbraShadow.Position = UDim2.new(0.5, 0, 0.5, 1)
+	PenumbraShadow.Size = UDim2.new(1, 18, 1, 18)
+	PenumbraShadow.Image = "rbxassetid://1316045217"
+	PenumbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	PenumbraShadow.ImageTransparency = 0.880
+	PenumbraShadow.ScaleType = Enum.ScaleType.Slice
+	PenumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	AmbientShadow.Name = "AmbientShadow"
+	AmbientShadow.Parent = Shadow
+	AmbientShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	AmbientShadow.BackgroundTransparency = 1.000
+	AmbientShadow.BorderSizePixel = 0
+	AmbientShadow.Position = UDim2.new(0.5, 0, 0.5, 3)
+	AmbientShadow.Size = UDim2.new(1, 5, 1, 5)
+	AmbientShadow.Image = "rbxassetid://1316045217"
+	AmbientShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	AmbientShadow.ImageTransparency = 0.800
+	AmbientShadow.ScaleType = Enum.ScaleType.Slice
+	AmbientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UICorner_4.CornerRadius = UDim.new(0, 5)
+	UICorner_4.Parent = Top
+
+	Minimize.Name = "Minimize"
+	Minimize.Parent = Top
+	Minimize.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	Minimize.BorderSizePixel = 0
+	Minimize.Position = UDim2.new(0.831353962, 0, 0.0625, 0)
+	Minimize.Size = UDim2.new(0, 28, 0, 29)
+	Minimize.ZIndex = 2
+	Minimize.Font = Enum.Font.GothamSemibold
+	Minimize.Text = "-"
+	Minimize.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Minimize.TextSize = 15.000
+	Minimize.TextWrapped = true
+
+	UICorner_5.CornerRadius = UDim.new(0, 5)
+	UICorner_5.Parent = Minimize
+
+	Shadow_2.Name = "Shadow"
+	Shadow_2.Parent = Minimize
+
+	UmbraShadow_2.Name = "UmbraShadow"
+	UmbraShadow_2.Parent = Shadow_2
+	UmbraShadow_2.AnchorPoint = Vector2.new(0.5, 0.5)
+	UmbraShadow_2.BackgroundTransparency = 1.000
+	UmbraShadow_2.BorderSizePixel = 0
+	UmbraShadow_2.Position = UDim2.new(0.5, 0, 0.5, 6)
+	UmbraShadow_2.Size = UDim2.new(1, 10, 1, 10)
+	UmbraShadow_2.Image = "rbxassetid://1316045217"
+	UmbraShadow_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	UmbraShadow_2.ImageTransparency = 0.860
+	UmbraShadow_2.ScaleType = Enum.ScaleType.Slice
+	UmbraShadow_2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	PenumbraShadow_2.Name = "PenumbraShadow"
+	PenumbraShadow_2.Parent = Shadow_2
+	PenumbraShadow_2.AnchorPoint = Vector2.new(0.5, 0.5)
+	PenumbraShadow_2.BackgroundTransparency = 1.000
+	PenumbraShadow_2.BorderSizePixel = 0
+	PenumbraShadow_2.Position = UDim2.new(0.5, 0, 0.5, 1)
+	PenumbraShadow_2.Size = UDim2.new(1, 18, 1, 18)
+	PenumbraShadow_2.Image = "rbxassetid://1316045217"
+	PenumbraShadow_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	PenumbraShadow_2.ImageTransparency = 0.880
+	PenumbraShadow_2.ScaleType = Enum.ScaleType.Slice
+	PenumbraShadow_2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	AmbientShadow_2.Name = "AmbientShadow"
+	AmbientShadow_2.Parent = Shadow_2
+	AmbientShadow_2.AnchorPoint = Vector2.new(0.5, 0.5)
+	AmbientShadow_2.BackgroundTransparency = 1.000
+	AmbientShadow_2.BorderSizePixel = 0
+	AmbientShadow_2.Position = UDim2.new(0.5, 0, 0.5, 3)
+	AmbientShadow_2.Size = UDim2.new(1, 5, 1, 5)
+	AmbientShadow_2.Image = "rbxassetid://1316045217"
+	AmbientShadow_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	AmbientShadow_2.ImageTransparency = 0.800
+	AmbientShadow_2.ScaleType = Enum.ScaleType.Slice
+	AmbientShadow_2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	TextLabel.Parent = Top
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Position = UDim2.new(0.0190023743, 0, 0.1875, 0)
+	TextLabel.Size = UDim2.new(0, 200, 0, 21)
+	TextLabel.Font = Enum.Font.GothamSemibold
+	TextLabel.Text = WindowName
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+	Pattern.Name = "Pattern"
+	Pattern.Parent = Main
+	Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Pattern.BackgroundTransparency = 1.000
+	Pattern.Position = UDim2.new(-0.124703087, 0, -0.146666661, 0)
+	Pattern.Size = UDim2.new(0, 504, 0, 372)
+	Pattern.ZIndex = 0
+	Pattern.Image = "rbxassetid://2151741365"
+	Pattern.ImageTransparency = 0.400
+	Pattern.ScaleType = Enum.ScaleType.Tile
+	Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+	Pattern.TileSize = UDim2.new(0, 250, 0, 250)
+
+	AmbientShadow1.Name = "AmbientShadow1"
+	AmbientShadow1.Parent = cvb3
+	AmbientShadow1.AnchorPoint = Vector2.new(0.5, 0.5)
+	AmbientShadow1.BackgroundTransparency = 1.000
+	AmbientShadow1.BorderSizePixel = 0
+	AmbientShadow1.Position = UDim2.new(0.509783506, 0, 0.481963903, 3)
+	AmbientShadow1.Size = UDim2.new(0, 430, 0, 310)
+	AmbientShadow1.ZIndex = 0
+	AmbientShadow1.Image = "rbxassetid://1316045217"
+	AmbientShadow1.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	AmbientShadow1.ImageTransparency = 0.800
+	AmbientShadow1.ScaleType = Enum.ScaleType.Slice
+	AmbientShadow1.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint.Parent = AmbientShadow1
+	UIAspectRatioConstraint.AspectRatio = 1.386
+
+	AmbientShadow2.Name = "AmbientShadow2"
+	AmbientShadow2.Parent = cvb3
+	AmbientShadow2.AnchorPoint = Vector2.new(0.5, 0.5)
+	AmbientShadow2.BackgroundTransparency = 1.000
+	AmbientShadow2.BorderSizePixel = 0
+	AmbientShadow2.Position = UDim2.new(0.509783506, 0, 0.481963903, 3)
+	AmbientShadow2.Size = UDim2.new(0, 430, 0, 310)
+	AmbientShadow2.ZIndex = 0
+	AmbientShadow2.Image = "rbxassetid://1316045217"
+	AmbientShadow2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	AmbientShadow2.ImageTransparency = 0.800
+	AmbientShadow2.ScaleType = Enum.ScaleType.Slice
+	AmbientShadow2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint_2.Parent = AmbientShadow2
+	UIAspectRatioConstraint_2.AspectRatio = 1.386
+
+	PenumbraShadow1.Name = "PenumbraShadow1"
+	PenumbraShadow1.Parent = cvb3
+	PenumbraShadow1.AnchorPoint = Vector2.new(0.5, 0.5)
+	PenumbraShadow1.BackgroundTransparency = 1.000
+	PenumbraShadow1.BorderSizePixel = 0
+	PenumbraShadow1.Position = UDim2.new(0.509274423, 0, 0.48696661, 1)
+	PenumbraShadow1.Size = UDim2.new(0, 431, 0, 309)
+	PenumbraShadow1.ZIndex = 0
+	PenumbraShadow1.Image = "rbxassetid://1316045217"
+	PenumbraShadow1.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	PenumbraShadow1.ImageTransparency = 0.880
+	PenumbraShadow1.ScaleType = Enum.ScaleType.Slice
+	PenumbraShadow1.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint_3.Parent = PenumbraShadow1
+	UIAspectRatioConstraint_3.AspectRatio = 1.398
+
+	PenumbraShadow2.Name = "PenumbraShadow2"
+	PenumbraShadow2.Parent = cvb3
+	PenumbraShadow2.AnchorPoint = Vector2.new(0.5, 0.5)
+	PenumbraShadow2.BackgroundTransparency = 1.000
+	PenumbraShadow2.BorderSizePixel = 0
+	PenumbraShadow2.Position = UDim2.new(0.509274423, 0, 0.48696661, 1)
+	PenumbraShadow2.Size = UDim2.new(0, 431, 0, 309)
+	PenumbraShadow2.ZIndex = 0
+	PenumbraShadow2.Image = "rbxassetid://1316045217"
+	PenumbraShadow2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	PenumbraShadow2.ImageTransparency = 0.880
+	PenumbraShadow2.ScaleType = Enum.ScaleType.Slice
+	PenumbraShadow2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint_4.Parent = PenumbraShadow2
+	UIAspectRatioConstraint_4.AspectRatio = 1.398
+
+	UmbraShadow1.Name = "UmbraShadow1"
+	UmbraShadow1.Parent = cvb3
+	UmbraShadow1.AnchorPoint = Vector2.new(0.5, 0.5)
+	UmbraShadow1.BackgroundTransparency = 1.000
+	UmbraShadow1.BorderSizePixel = 0
+	UmbraShadow1.Position = UDim2.new(0.509783506, 0, 0.478506416, 6)
+	UmbraShadow1.Size = UDim2.new(0, 430, 0, 308)
+	UmbraShadow1.ZIndex = 0
+	UmbraShadow1.Image = "rbxassetid://1316045217"
+	UmbraShadow1.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	UmbraShadow1.ImageTransparency = 0.860
+	UmbraShadow1.ScaleType = Enum.ScaleType.Slice
+	UmbraShadow1.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint_5.Parent = UmbraShadow1
+	UIAspectRatioConstraint_5.AspectRatio = 1.395
+
+	UmbraShadow2.Name = "UmbraShadow2"
+	UmbraShadow2.Parent = cvb3
+	UmbraShadow2.AnchorPoint = Vector2.new(0.5, 0.5)
+	UmbraShadow2.BackgroundTransparency = 1.000
+	UmbraShadow2.BorderSizePixel = 0
+	UmbraShadow2.Position = UDim2.new(0.509783506, 0, 0.478506416, 6)
+	UmbraShadow2.Size = UDim2.new(0, 430, 0, 308)
+	UmbraShadow2.ZIndex = 0
+	UmbraShadow2.Image = "rbxassetid://1316045217"
+	UmbraShadow2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	UmbraShadow2.ImageTransparency = 0.860
+	UmbraShadow2.ScaleType = Enum.ScaleType.Slice
+	UmbraShadow2.SliceCenter = Rect.new(10, 10, 118, 118)
+
+	UIAspectRatioConstraint_6.Parent = UmbraShadow2
+	UIAspectRatioConstraint_6.AspectRatio = 1.395
+
+	ButtonFrame.Name = "ButtonFrame"
+	ButtonFrame.Parent = Main
+	ButtonFrame.Active = true
+	ButtonFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	ButtonFrame.BorderSizePixel = 0
+	ButtonFrame.Position = UDim2.new(0, 0, 0.106666669, 0)
+	ButtonFrame.Size = UDim2.new(0, 88, 0, 268)
+	ButtonFrame.ScrollBarThickness = 0
+
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Left
+	UIListLayout.Parent = ButtonFrame
+
+	AmbientShadow.Parent = Main
+	AmbientShadow1.Parent = Main
+	AmbientShadow2.Parent = Main
+	PenumbraShadow.Parent = Main
+	PenumbraShadow1.Parent = Main
+	PenumbraShadow2.Parent = Main
+	UmbraShadow.Parent = Main
+	UmbraShadow1.Parent = Main
+	UmbraShadow2.Parent = Main
+
+	AmbientShadow.Position = UDim2.new(0.498, 0,0.506, 3)
+	AmbientShadow1.Position = UDim2.new(0.498, 0,0.506, 3)
+	AmbientShadow2.Position = UDim2.new(0.498, 0,0.506, 3)
+	PenumbraShadow.Position = UDim2.new(0.498, 0,0.506, 3)
+	PenumbraShadow1.Position = UDim2.new(0.498, 0,0.506, 3)
+	PenumbraShadow2.Position = UDim2.new(0.498, 0,0.506, 3)
+	UmbraShadow.Position = UDim2.new(0.498, 0,0.506, 3)
+	UmbraShadow1.Position = UDim2.new(0.498, 0,0.506, 3)
+	UmbraShadow2.Position = UDim2.new(0.498, 0,0.506, 3)
+
+	AmbientShadow.ZIndex = -1
+	AmbientShadow1.ZIndex = -1
+	AmbientShadow2.ZIndex = -1
+	PenumbraShadow.ZIndex = -1
+	PenumbraShadow1.ZIndex = -1
+	PenumbraShadow2.ZIndex = -1
+	UmbraShadow.ZIndex = -1
+	UmbraShadow1.ZIndex = -1
+	UmbraShadow2.ZIndex = -1
+
+	Sections.Name = "Sections"
+	Sections.Parent = Main
+	Sections.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Sections.BackgroundTransparency = 1.000
+	Sections.Position = UDim2.new(0.211401418, 0, 0.109999999, 0)
+	Sections.Size = UDim2.new(0, 332, 0, 267)
+
+	local PatStroke = Instance.new("UIStroke")
+	local PatCorner = Instance.new("UICorner")
+	PatCorner.Parent = Pattern
+	PatCorner.CornerRadius = UDim.new(0,5)
+	PatStroke.Parent = Pattern
+	PatStroke.Color = Color3.fromRGB(149, 149, 149)
+	PatStroke.LineJoinMode = Enum.LineJoinMode.Round
+	Pattern.ZIndex = 0
+	Pattern.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	Pattern.BackgroundTransparency = 0
+
+	--//Close button function
+	Close.MouseButton1Click:Connect(function()
+		Sections.Visible = false
+		ButtonFrame.Visible = false
+		AmbientShadow.Visible = false
+		AmbientShadow1.Visible = false
+		AmbientShadow2.Visible = false
+		PenumbraShadow.Visible = false
+		PenumbraShadow1.Visible = false
+		PenumbraShadow2.Visible = false
+		UmbraShadow.Visible = false
+		UmbraShadow1.Visible = false
+		UmbraShadow2.Visible = false
+		TweenService:Create(
+			Main,
+			TweenInfo.new(.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+			{Size = UDim2.new(0, 421,0, 31)}
+		):Play()
+		wait(0.3)
+		TweenService:Create(
+			Main,
+			TweenInfo.new(.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+			{Size = UDim2.new(0, 0,0, 31)}
+		):Play()
+		Stroke:Destroy()
+		wait(0.5)
+		cvb3:Destroy()
+	end)
+	--//Minimize button function
+	local hide = false
+	Minimize.MouseButton1Click:Connect(function()
+		if hide == false then
+			Sections.Visible = false
+			ButtonFrame.Visible = false
+			AmbientShadow.Visible = false
+			AmbientShadow1.Visible = false
+			AmbientShadow2.Visible = false
+			PenumbraShadow.Visible = false
+			PenumbraShadow1.Visible = false
+			PenumbraShadow2.Visible = false
+			UmbraShadow.Visible = false
+			UmbraShadow1.Visible = false
+			UmbraShadow2.Visible = false
+			TweenService:Create(
+				Main,
+				TweenInfo.new(.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+				{Size = UDim2.new(0, 421,0, 31)}
+			):Play()
+			hide = true
+		else
+			TweenService:Create(
+				Main,
+				TweenInfo.new(.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+				{Size = UDim2.new(0, 421,0, 300)}
+			):Play()
+			wait(.3)
+			Sections.Visible = true
+			ButtonFrame.Visible = true
+			AmbientShadow.Visible = true
+			AmbientShadow1.Visible = true
+			AmbientShadow2.Visible = true
+			PenumbraShadow.Visible = true
+			PenumbraShadow1.Visible = true
+			PenumbraShadow2.Visible = true
+			UmbraShadow.Visible = true
+			UmbraShadow1.Visible = true
+			UmbraShadow2.Visible = true
+			hide = false
+		end
+	end)
+	--Draggable
+	local UserInputService = game:GetService("UserInputService")
+
+	local gui = Main
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Sine', 0.1, true); -- drag speed
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+	--//Create section
+	local WindowHolder = {}
+	function WindowHolder:CreateSection(ButtonText, SectionName)
+		local SectionButton = Instance.new("TextButton")
+		local SectionPage = Instance.new("ScrollingFrame")
+		local PageList = Instance.new("UIListLayout")
+		local AscpectConst = Instance.new("UIAspectRatioConstraint")
+		AscpectConst.Parent = SectionPage
+		AscpectConst.AspectRatio = 1.3
+		AscpectConst.AspectType = Enum.AspectType.FitWithinMaxSize
+		AscpectConst.DominantAxis = Enum.DominantAxis.Width
+		PageList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		PageList.Parent = SectionPage
+		PageList.Padding = UDim.new(0, 5)
+		SectionPage.Position = UDim2.new(-0.002, 0,0.018, 0)
+		SectionPage.Size = UDim2.new(0, 336,0, 269)
+		SectionPage.Parent = Sections
+		SectionPage.Name = SectionName
+		SectionPage.BackgroundTransparency = 1
+		SectionPage.ScrollBarThickness = 0
+		SectionPage.CanvasSize = UDim2.new(0,0,50,0)
+		SectionButton.Parent = ButtonFrame
+		SectionButton.Text = ButtonText
+		SectionButton.Size = UDim2.new(0, 88, 0, 41)
+		SectionButton.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+		SectionButton.Font = Enum.Font.GothamSemibold
+		SectionButton.BorderSizePixel = 0
+		SectionButton.TextColor3 = Color3.fromRGB(255,255,255)
+		SectionButton.TextScaled = true
+		SectionButton.MouseButton1Click:Connect(function()
+			Sections.Visible = true
+			local SectionFrameVar = Sections:WaitForChild(SectionName)
+			for i, v in next, ButtonFrame:GetChildren() do
+				if v.Name == "TextButton" then
+					TweenService:Create(
+						v,
+						TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+						{BackgroundColor3 = Color3.fromRGB(38, 38, 38)}
+					):Play()
+					TweenService:Create(
+						v,
+						TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+						{TextColor3 = Color3.fromRGB(255,255,255)}
+					):Play()
+				end
+				for i, v in next, Sections:GetChildren() do
+					v.Visible = false
+				end
+				wait()
+				SectionFrameVar.Visible = true
+				TweenService:Create(
+					SectionButton,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{BackgroundColor3 = Color3.fromRGB(241, 241, 241)}
+				):Play()
+				TweenService:Create(
+					SectionButton,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{TextColor3 = Color3.fromRGB(0, 0, 0)}
+				):Play()
+			end
+		end)
+		local SectionStuffHolder = {}
+		function SectionStuffHolder:CreateButton(ButtonTitle,ButtonText, callback)
+			local callback = callback or function() end
+			local Script = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local ScriptStroke = Instance.new("UIStroke")
+			local Text = Instance.new("TextLabel")
+			local ButtonAdornment = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local AdornmentStroke = Instance.new("UIStroke")
+			local Button = Instance.new("TextButton")
+			local Body = Instance.new("TextLabel")
+			local SectionFrameVarForButton = Sections:WaitForChild(SectionName)
+
+			Script.Name = "Script"
+			Script.Parent = SectionFrameVarForButton
+			Script.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			Script.Size = UDim2.new(0, 309, 0, 50)
+
+			UICorner.CornerRadius = UDim.new(0, 5)
+			UICorner.Parent = Script
+
+			ScriptStroke.Name = "UIStroke"
+			ScriptStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			ScriptStroke.Color = Color3.fromRGB(149,149,149)
+			ScriptStroke.LineJoinMode = Enum.LineJoinMode.Round
+			ScriptStroke.Thickness = 1
+			ScriptStroke.Enabled = true
+			ScriptStroke.Parent = Script
+
+			AdornmentStroke.Name = "UIStroke"
+			AdornmentStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			AdornmentStroke.Color = Color3.fromRGB(149,149,149)
+			AdornmentStroke.LineJoinMode = Enum.LineJoinMode.Round
+			AdornmentStroke.Thickness = 1
+			AdornmentStroke.Enabled = true
+			AdornmentStroke.Parent = ButtonAdornment
+
+			Text.Name = ButtonTitle
+			Text.Parent = Script
+			Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Text.BackgroundTransparency = 1.000
+			Text.Position = UDim2.new(0.0233616512, 0, 0.159999996, 0)
+			Text.Size = UDim2.new(0, 66, 0, 32)
+			Text.Font = Enum.Font.Gotham
+			Text.Text = ButtonTitle
+			Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Text.TextScaled = true
+			Text.TextSize = 14.000
+			Text.TextWrapped = true
+			Text.TextXAlignment = Enum.TextXAlignment.Left
+
+			ButtonAdornment.Name = "ButtonAdornment"
+			ButtonAdornment.Parent = Script
+			ButtonAdornment.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			ButtonAdornment.Position = UDim2.new(0.7799353, 0, 0.159999996, 0)
+			ButtonAdornment.Size = UDim2.new(0, 54, 0, 32)
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = ButtonAdornment
+
+			Button.Name = "Button"
+			Button.Parent = ButtonAdornment
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Button.BackgroundTransparency = 1.000
+			Button.Size = UDim2.new(0, 54, 0, 32)
+			Button.Font = Enum.Font.Gotham
+			Button.Text = "Execute"
+			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Button.TextScaled = true
+			Button.TextSize = 25.000
+			Button.TextWrapped = true
+
+			Body.Name = "Body"
+			Body.Parent = Script
+			Body.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Body.BackgroundTransparency = 1.000
+			Body.Position = UDim2.new(0.275788844, 0, 0.360000014, 0)
+			Body.Size = UDim2.new(0, 137, 0, 15)
+			Body.Font = Enum.Font.Gotham
+			Body.Text = ButtonText
+			Body.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Body.TextScaled = true
+			Body.TextSize = 14.000
+			Body.TextWrapped = true
+			Body.TextXAlignment = Enum.TextXAlignment.Left
+			Button.MouseButton1Down:Connect(function()
+				pcall(callback)
+			end)
+			Button.MouseButton1Click:Connect(function()
+				TweenService:Create(
+					ButtonAdornment,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{BackgroundColor3 = Color3.fromRGB(241, 241, 241)}
+				):Play()
+				TweenService:Create(
+					Button,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{TextColor3 = Color3.fromRGB(0, 0, 0)}
+				):Play()
+				TweenService:Create(
+					AdornmentStroke,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{Color = Color3.fromRGB(45, 45, 45)}
+				):Play()
+				wait(0.5)
+				TweenService:Create(
+					ButtonAdornment,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{BackgroundColor3 = Color3.fromRGB(38, 38, 38)}
+				):Play()
+				TweenService:Create(
+					Button,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{TextColor3 = Color3.fromRGB(255, 255, 255)}
+				):Play()
+				TweenService:Create(
+					AdornmentStroke,
+					TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+					{Color = Color3.fromRGB(149,149,149)}
+				):Play()
+			end)
+			Sections.Visible = false
+		end
+		function SectionStuffHolder:CreateSlider(text, minVal, maxVal, callback)
+			--//Important variables
+			text = text or "Slider"
+			minVal = minVal or 0
+			maxVal = maxVal or 100
+			callback = callback or function() end
+			local mouse = game.Players.LocalPlayer:GetMouse()
+			local uis = game:GetService("UserInputService")
+			local Value;
+			local releaseconnection;
+			local moveconnection;
+			--//Variables
+			local Slider = Instance.new("Frame")
+			local SliderStroke = Instance.new("UIStroke")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local Number = Instance.new("TextLabel")
+			local Outline = Instance.new("Frame")
+			local OutlineStroke = Instance.new("UIStroke")
+			local UICorner_2 = Instance.new("UICorner")
+			local Bar = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local Button = Instance.new("TextButton")
+			local SectionFarmeVarForSlider = Sections:WaitForChild(SectionName)
+			local ButtonCorner = Instance.new("UICorner")
+
+			Slider.Name = "Slider"
+			Slider.Parent = SectionFarmeVarForSlider
+			Slider.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			Slider.Size = UDim2.new(0, 309, 0, 50)
+
+			UICorner.CornerRadius = UDim.new(0, 5)
+			UICorner.Parent = Slider
+
+			SliderStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			SliderStroke.Color = Color3.fromRGB(149, 149, 149)
+			SliderStroke.LineJoinMode = Enum.LineJoinMode.Round
+			SliderStroke.Thickness = 1
+			SliderStroke.Parent = Slider
+
+			Title.Name = "Title"
+			Title.Parent = Slider
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1
+			Title.Position = UDim2.new(0.0233616512, 0, 0, 0)
+			Title.Size = UDim2.new(0, 78, 0, 24)
+			Title.Font = Enum.Font.Gotham
+			Title.Text = text
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextScaled = true
+			Title.TextSize = 14
+			Title.TextWrapped = true
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			Number.Name = "Number"
+			Number.Parent = Slider
+			Number.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Number.BackgroundTransparency = 1.000
+			Number.Position = UDim2.new(0.7799353, 0, 0, 0)
+			Number.Size = UDim2.new(0, 67, 0, 24)
+			Number.Text = minVal
+			Number.Font = Enum.Font.Gotham
+			Number.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Number.TextScaled = true
+			Number.TextSize = 14.000
+			Number.TextWrapped = true
+
+			Outline.Name = "Outline"
+			Outline.Parent = Slider
+			Outline.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			Outline.Position = UDim2.new(0.0582524277, 0, 0.479999989, 0)
+			Outline.Size = UDim2.new(0, 267, 0, 17)
+
+			OutlineStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			OutlineStroke.Color = Color3.fromRGB(149, 149, 149)
+			OutlineStroke.LineJoinMode = Enum.LineJoinMode.Round
+			OutlineStroke.Thickness = 1
+			OutlineStroke.Parent = Outline
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = Outline
+
+			Bar.Name = "Bar"
+			Bar.Parent = Outline
+			Bar.BackgroundColor3 = Color3.fromRGB(27, 149, 0)
+			Bar.Size = UDim2.new(0, 0,0, 16)
+
+			UICorner_3.CornerRadius = UDim.new(0, 5)
+			UICorner_3.Parent = Bar
+
+			Button.Name = "Button"
+			Button.Parent = Bar
+			Button.BackgroundColor3 = Color3.fromRGB(27, 149, 0)
+			Button.Position = UDim2.new(0.940074921, 0, 0, 0)
+			Button.Size = UDim2.new(0, 16, 0, 17)
+			Button.Font = Enum.Font.SourceSans
+			Button.Text = ""
+			Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Button.TextSize = 14.000
+			ButtonCorner.CornerRadius = UDim.new(0,5)
+			ButtonCorner.Parent = Button
+			
+			Button.MouseButton1Down:Connect(function()
+				Value = math.floor((((tonumber(maxVal) - tonumber(minVal)) / 267) * Bar.AbsoluteSize.X) + tonumber(minVal)) or 0
+				pcall(function()
+					callback(Value)
+				end)
+				Bar.Size = UDim2.new(0, math.clamp(mouse.X - Bar.AbsolutePosition.X, 0, 267), 0, 17)
+				moveconnection = mouse.Move:Connect(function()
+					Value = math.floor((((tonumber(maxVal) - tonumber(minVal)) / 267) * Bar.AbsoluteSize.X) + tonumber(minVal))
+						pcall(function()
+							callback(Value)
+							Number.Text = Value
+						end)
+					Bar.Size = UDim2.new(0, math.clamp(mouse.X - Bar.AbsolutePosition.X, 0, 267), 0, 17)
+				end)
+				releaseconnection = uis.InputEnded:Connect(function(Mouse)
+					if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+						Value = math.floor((((tonumber(maxVal) - tonumber(minVal)) / 267) * Bar.AbsoluteSize.X) + tonumber(minVal))
+						pcall(function()
+							callback(Value)
+						end)
+						Bar.Size = UDim2.new(0, math.clamp(mouse.X - Bar.AbsolutePosition.X, 0, 267), 0, 17)
+						moveconnection:Disconnect()
+						releaseconnection:Disconnect()
+					end
+				end)
+			end)
+			-----
+			function SectionStuffHolder:CreateToggle(text, bodytext, callback)
+				
+				local actions = {}
+				local enabled = false
+				
+				text = text or "Toggle"
+				
+				local Toggle = Instance.new("Frame")
+				local ToggleStroke = Instance.new("UIStroke")
+				local MainUICorner = Instance.new("UICorner")
+				local Title = Instance.new("TextLabel")
+				local Outline = Instance.new("Frame")
+				local OutlineStroke = Instance.new("UIStroke")
+				local UICorner_2 = Instance.new("UICorner")
+				local TextButton = Instance.new("TextButton")
+				local UICorner_3 = Instance.new("UICorner")
+				local Background = Instance.new("Frame")
+				local UICorner_4 = Instance.new("UICorner")
+				local BodyText = Instance.new("TextLabel")
+				local SectionFarmeVarForToggle = Sections:WaitForChild(SectionName)
+
+				Toggle.Name = "Toggle"
+				Toggle.Parent = SectionFarmeVarForSlider
+				Toggle.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+				Toggle.Size = UDim2.new(0, 309, 0, 50)
+
+				MainUICorner.CornerRadius = UDim.new(0, 5)
+				MainUICorner.Parent = Toggle
+				
+				ToggleStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+				ToggleStroke.LineJoinMode = Enum.LineJoinMode.Round
+				ToggleStroke.Color = Color3.fromRGB(149,149,149)
+				ToggleStroke.Parent = Toggle
+				
+				Title.Name = "Title"
+				Title.Parent = Toggle
+				Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Title.BackgroundTransparency = 1.000
+				Title.Position = UDim2.new(0.0233616512, 0, 0.119999997, 0)
+				Title.Size = UDim2.new(0, 78, 0, 35)
+				Title.Font = Enum.Font.Gotham
+				Title.Text = text
+				Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Title.TextScaled = true
+				Title.TextSize = 14.000
+				Title.TextWrapped = true
+				Title.TextXAlignment = Enum.TextXAlignment.Left
+
+				Outline.Name = "Outline"
+				Outline.Parent = Toggle
+				Outline.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+				Outline.Position = UDim2.new(0.796116531, 0, 0.319999993, 0)
+				Outline.Size = UDim2.new(0, 44, 0, 17)
+				
+				OutlineStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+				OutlineStroke.LineJoinMode = Enum.LineJoinMode.Round
+				OutlineStroke.Color = Color3.fromRGB(149,149,149)
+				OutlineStroke.Parent = Outline
+
+				UICorner_2.CornerRadius = UDim.new(0, 5)
+				UICorner_2.Parent = Outline
+
+				TextButton.Parent = Outline
+				TextButton.BackgroundColor3 = Color3.fromRGB(118, 0, 0)
+				TextButton.Size = UDim2.new(0, 22, 0, 17)
+				TextButton.Font = Enum.Font.SourceSans
+				TextButton.Text = ""
+				TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton.TextSize = 14.000
+
+				UICorner_3.CornerRadius = UDim.new(0, 5)
+				UICorner_3.Parent = TextButton
+
+				Background.Name = "Background"
+				Background.Parent = Outline
+				Background.BackgroundColor3 = Color3.fromRGB(72, 0, 0)
+				Background.Size = UDim2.new(0, 44, 0, 17)
+				Background.ZIndex = 0
+
+				UICorner_4.CornerRadius = UDim.new(0, 5)
+				UICorner_4.Parent = Background
+
+				BodyText.Name = "BodyText"
+				BodyText.Parent = Toggle
+				BodyText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				BodyText.BackgroundTransparency = 1.000
+				BodyText.Position = UDim2.new(0.295206308, 0, 0.100000001, 0)
+				BodyText.Size = UDim2.new(0, 131, 0, 35)
+				BodyText.Font = Enum.Font.Gotham
+				BodyText.Text = bodytext
+				BodyText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				BodyText.TextScaled = true
+				BodyText.TextSize = 14.000
+				BodyText.TextWrapped = true
+				BodyText.TextXAlignment = Enum.TextXAlignment.Left
+				
+				local function Fire()
+
+					enabled = not enabled
+					TextButton:TweenPosition(enabled and UDim2.new(0.5, 0,0, 0) or UDim2.new(0, 0,0, 0), "InOut", "Sine", .3)
+					Background.BackgroundColor3 = enabled and Color3.fromRGB(11, 76, 0) or Color3.fromRGB(72, 0, 0)
+					TextButton.BackgroundColor3 = enabled and Color3.fromRGB(17, 118, 0) or Color3.fromRGB(118, 0, 0)
+					pcall(callback, enabled)
+				end
+				
+				TextButton.MouseButton1Click:Connect(Fire)
+				
+			end
+			-----
+		end
+		return SectionStuffHolder
+	end
+	return WindowHolder
+end
