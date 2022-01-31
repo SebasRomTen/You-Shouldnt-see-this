@@ -2,7 +2,7 @@ local SynxLib = {}
 
 local TweenService = game:GetService("TweenService")
 
-function SynxLib:CreateWindow(WindowName)
+function SynxLib:Create(WindowName)
 	local UICornerMain = Instance.new("UICorner")
 	local UIListLayout = Instance.new("UIListLayout")
 	local cvb3 = Instance.new("ScreenGui")
