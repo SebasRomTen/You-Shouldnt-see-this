@@ -930,4 +930,4 @@ function SynxLib:CreateWindow(WindowName)
 	end
 	return WindowHolder
 end
-SynxLib:CreateWindow("Test")
+return SynxLib
